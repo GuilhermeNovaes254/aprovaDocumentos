@@ -2,14 +2,18 @@
 
 <body>
 	<div class="container">
-		Logged! *** <p id='path'></p> ***
+		<h1>Upload</h1>
+		<form method="post" enctype="multipart/form-data" action="/anexar/arquivo" method="POST">
+			<input id="file-input" type="file" name='arquivo' />
+			<button type="submit">Enviar</button>
+		</form>
 	</div>
 
 </body>
 
 <script>
-   const pathnmame =  window.location.pathname;
-    document.getElementById('path').innerHTML = pathnmame
+	const pathnmame = window.location.pathname;
+	document.getElementById('path').innerHTML = pathnmame;
 </script>
 
 <%- include('./partials/footer') %>

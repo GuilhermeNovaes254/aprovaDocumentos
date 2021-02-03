@@ -9,8 +9,8 @@ body {
 }
 
 :root {
-    --body-bg: /*#3e3e3e*/
-        #d8d8d8
+    --body-bg: #3e3e3e
+        /* #d8d8d8 */
     ;
     --body-elements: #c0c0c;
     --button-color: #4CAF50;
@@ -37,7 +37,8 @@ a {
 }
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type="file"]  {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -47,7 +48,7 @@ input[type=password] {
     box-sizing: border-box;
 }
 
-input[type=submit] {
+input[type=submit], button[type=submit] {
     width: 100%;
     background-color: var(--button-color);
     color: white;
@@ -59,7 +60,11 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+button[type=submit] {
+    width: 20%;
+}
+
+input[type=submit]:hover,  button[type=submit]:hover{
     background-color: var(--button-hover-color);
 }
 

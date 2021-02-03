@@ -8,7 +8,7 @@ const authLogin = {
         const {password, email} = req.body;
         
         const user = await userService.getOne(email)
-
+        // console.log(user)
 
         // validar senha passada via post contra a guardada
         if (!bcrypt.compareSync(password, user.password)) {
