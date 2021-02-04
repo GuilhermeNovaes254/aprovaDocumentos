@@ -21,20 +21,19 @@ exports.getAllFiles = async (email) => {
    }
 };
 
-// exports.getOneFile = async (email) => {
-//     try {
-//        const file = await File.findOne({ email: email });
-//        return file;
-//     } catch (error) {
-//        throw new Error(error);
-//     }
-// };
+exports.filterOpenProtocolFiles = async () => {
+    try {
+       const files = await File.find({ status: 0 }).populate('criador', ['_id', 'nome', 'sobrenome']);
+       return files;
+    } catch (error) {
+       throw new Error(error);
+    }
+};
 
-exports.updateFile = async (email, update) => {
+exports.updateFile = async (id, update) => {
    try{
       const options = { new: true };
-      const file = await File.findOne({ email: email });
-      const newFile = await File.findByIdAndUpdate(file._id, update, options);
+      const newFile = await File.findByIdAndUpdate(id, update, options);
       console.log(newFile)
 
    }catch(error) {
@@ -42,8 +41,4 @@ exports.updateFile = async (email, update) => {
    }
 };
 
-
-exports.createProtocol = async (file, aprovador) => {
-
-};
 

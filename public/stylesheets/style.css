@@ -99,3 +99,13 @@ input[type=submit]:hover,  button[type=submit]:hover{
 .element-header:hover {
     background-color: var(--button-hover-color);
 }
+
+#aprovarBotao, #negarBotao{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+}
+
+#negarBotao{
+    background-color: blue;
+}

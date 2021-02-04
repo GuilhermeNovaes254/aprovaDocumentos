@@ -1,12 +1,13 @@
-const userService = require('../services/user.service');
+const fileController = require('./file.controller');
+const userController = require('./user.controller');
 
-exports.welcome = (req, res) => {
+exports.welcome = async (req, res) => {
 
     res.render('index');
 
 };
 
-exports.login = (req, res) => {
+exports.login = async (req, res) => {
 
     const {
         email,
@@ -18,33 +19,35 @@ exports.login = (req, res) => {
 
 };
 
-exports.main = (req, res) => {
+exports.main = async (req, res) => {
 
     res.render('main');
 
 };
 
-exports.anexar = (req, res) => {
+exports.anexar = async (req, res) => {
 
     res.render('anexar')
 };
 
-exports.aprovar = (req, res) => {
+exports.aprovar = async (req, res) => {
 
-    res.render('aprovar')
+    const aprove = await fileController.openProtocol();
+    console.log(aprove)
+    res.render('aprovar', {datas:aprove});
 };
 
-exports.gerir = (req, res) => {
-
-    res.render('gerir')
+exports.gerir = async (req, res) => {
+    const users = await userController.getAll();
+    res.render('gerir', {users:users});
 };
 
-exports.updateuser = (req, res) => {
+exports.updateuser = async (req, res) => {
 
     res.render('update')
 };
 
-exports.relatorios = (req, res) => {
+exports.relatorios = async (req, res) => {
 
     res.render('relatorios')
 };

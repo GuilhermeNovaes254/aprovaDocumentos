@@ -2,19 +2,33 @@
 
 <body>
 	<div class="container">
-		<!-- <%for(let i = 0;; i++){%>
-
-		<%}%> -->
-		<div class="user">
-
+		<table border="1">
+			<tr>
+				<td>Nome</td>
+				<td>Sobrenome</td>
+				<td>E-mail</td>
+				<td>Cargo</td>
+			</tr>
+			<%for(user of users){%>
+				<tr>
+					<td><%=user.nome%></td>
+					<td><%=user.sobrenome%></td>
+					<td><%=user.email%></td>
+					<td><%=user.cargo%></td>
+				</tr>
+			<%}%>
+		</table>
+		<div class="container">
+			<p>
+				Legenda:<br>
+				Usuário = 0 <br>
+				Aprovador = 1<br>
+				Adm = 2
+			</p>
 		</div>
 	</div>
 
 </body>
 
-<script>
-   const pathnmame =  window.location.pathname;
-    document.getElementById('path').innerHTML = pathnmame
-</script>
 
 <%- include('./partials/footer') %>

@@ -6,21 +6,25 @@ const fileSchema = new mongoose.Schema({
         required: true,
         unique: false
     },
-    status: {
-        type: Boolean,
+    status: { //0 : false , 1: true , 2: deny,
+        type: Number,
         required: true,
         unique: false,
-        default: false
+        default: 0
     },
     aprovador: {
-        type: mongoose.Types.ObjectId, 
+        type: mongoose.Schema.Types.ObjectId, 
         ref: 'User',
         required: false
     },
     criador: {
-        type: mongoose.Types.ObjectId, 
+        type: mongoose.Schema.Types.ObjectId, 
         ref: 'User',
         required: false
+    },
+    local:{
+        type: String,
+        required: true
     },
     protocolo_entrada:{
         type: String

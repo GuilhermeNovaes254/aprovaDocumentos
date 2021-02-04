@@ -26,5 +26,9 @@ router.post('/users/create', usersController.create);
 router.get('/users', usersController.getAll);
 
 router.post("/anexar/arquivo", multer(multerConfig).single('arquivo'), fileController.createFileRegistry);
+router.get("/anexar/arquivo/listar", fileController.openProtocol)
+
+router.get("/aprovar/aprovar", fileController.aprove);
+router.get("/aprovar/negar", fileController.deny);
 
 module.exports = router;

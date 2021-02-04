@@ -2,14 +2,35 @@
 
 <body>
 	<div class="container">
-		Logged! *** <p id='path'></p> ***
+		<%if( datas.length != 0){%>
+			<table border="1">
+				<tr>
+					<td>Incluído por</td>
+					<td>Data(Ano/Mês/Dia)</td>
+					<td>Visualizar</td>
+					<td>Ação</td>
+				</tr>
+				<%for(data of datas){%>
+					<tr>
+						<td><%=data.criador.nome%> <%=data.criador.sobrenome%></td>
+						<td><%=data.data_protocolo_entrada.toLocaleDateString()%></td>
+						<td><a href='<%=data.local%>' download='<%=data.file%>' target="_blank" >Abrir</a></td>
+						<td>
+							<a href='/aprovar/aprovar?id=<%=data._id%>'><div id='aprovarBotao'></div></a>
+							<a href='/aprovar/negar?id=<%=data._id%>'><div id='negarBotao'></div></a>
+						</td>
+					</tr>
+				<%}%>
+			</table>
+		<%}else{%>
+			<p>Não existem documentos para serem aprovados.</p>
+		<%}%>
 	</div>
 
 </body>
 
 <script>
-   const pathnmame =  window.location.pathname;
-    document.getElementById('path').innerHTML = pathnmame
+
 </script>
 
 <%- include('./partials/footer') %>
