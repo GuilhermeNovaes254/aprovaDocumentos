@@ -33,17 +33,20 @@ exports.anexar = async (req, res) => {
 exports.aprovar = async (req, res) => {
 
     const aprove = await fileController.openProtocol();
-    console.log(aprove)
+    // console.log(aprove)
     res.render('aprovar', {datas:aprove});
 };
 
 exports.gerir = async (req, res) => {
+
     const users = await userController.getAll();
     res.render('gerir', {users:users});
 };
 
 exports.updateuser = async (req, res) => {
 
+    // const id = req.query.id;
+    // const user = await userController.findOne(id)
     res.render('update')
 };
 
