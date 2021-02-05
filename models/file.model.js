@@ -37,6 +37,9 @@ const fileSchema = new mongoose.Schema({
     },
     data_procolo_aprov: {
         type: Date
+    },
+    descricao: {
+        type: String
     }
 });
 

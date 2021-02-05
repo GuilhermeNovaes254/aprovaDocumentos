@@ -39,6 +39,10 @@ label{
     color: var(--body-bg);
 }
 
+.label-form{
+    color: white;
+}
+
 input[type=text],
 input[type=password],
 input[type="file"],
@@ -137,4 +141,13 @@ input[type=submit]:hover,  button[type=submit]:hover{
 
 .td{
     height: 30px;
+}
+
+tr td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}
+
+#descricao{
+    max-width: 50%;
 }

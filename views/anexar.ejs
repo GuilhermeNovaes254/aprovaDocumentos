@@ -4,10 +4,13 @@
 	<div class="container">
 		<h3>Upload</h3>
 		<form class="container" method="post" enctype="multipart/form-data" action="/anexar/arquivo" method="POST">
-			<input id="file-input" type="file" name="arquivo" />
+			<label class='label-form'>Descricao</label>
+			<textarea maxlength='140' id="descricao" name="descricao" required autofocus></textarea>
+			<label class='label-form'>Arquivo</label>
+			<input id="file-input" type="file" name="arquivo" required />
 			<button type="submit">Enviar</button>
 		</form>
-		<p id="criado">Arquivo Recebido</p>
+		<h3 id="cabecadoCriado">Arquivo Recebido</h3>
 		<h3 id="cabecalhoProtocolo">Protolo</h3>
 		<p id='protocolo'></p>
 	</div>
@@ -17,18 +20,24 @@
 <script>
 
 	let query = (window.location.href).split("?");
-	let itens = query[1].replaceAll('=','&').split("&");
+	let itens = '';
 
-	let criado = itens[1];
+	if(query[1] != undefined){
+		itens = query[1].replaceAll('=','&').split("&");
+	}	
+	let criadoText = itens[1];
 	let protocolText = itens[3];
 
-	if(criado != "true"){
-		document.getElementById("criado").style.display = "none";
-		document.getElementById("cabecalhoProtocolo").style.display = "none";
-		document.getElementById("protocolo").style.display = "none";
+	document.getElementById("cabecadoCriado").style.display = "none";
+	document.getElementById("cabecalhoProtocolo").style.display = "none";
+	document.getElementById("protocolo").style.display = "none";
 
-	}else{
+	if(criadoText == "true"){
+		document.getElementById("cabecadoCriado").style.display = "inline";
+		document.getElementById("cabecalhoProtocolo").style.display = "inline";
+		document.getElementById("protocolo").style.display = "inline";
 		document.getElementById("protocolo").innerText = protocolText;
+
 	}
 	
 </script>

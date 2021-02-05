@@ -5,15 +5,17 @@
 		<%if( datas.length != 0){%>
 			<table border="1">
 				<tr>
-					<td class="field" >Incluído por</td>
-					<td class="field" >Data(Ano/Mês/Dia)</td>
-					<td class="field" >Visualizar</td>
-					<td class="field" >Ação</td>
+					<td class='td-auto' class="field" >Incluído por</td>
+					<td class='td-auto' class="field" >Data(Ano/Mês/Dia)</td>
+					<td class='td-auto' class="field" >Descricao</td>
+					<td class='td-auto' class="field" >Visualizar</td>
+					<td class='td-auto' class="field" >Ação</td>
 				</tr>
 				<%for(data of datas){%>
 					<tr>
 						<td class="field" ><%=data.criador.nome%> <%=data.criador.sobrenome%></td>
 						<td class="field" ><%=data.data_protocolo_entrada.toLocaleDateString()%></td>
+						<td class="field" ><%=data.descricao%></td>
 						<td class="field" ><a href="<%=data.local%>" download="<%=data.file%>" target="_blank" >Abrir</a></td>
 						<td class="field" id ="aproveField">
 							<a href="/aprovar/aprovar?id=<%=data._id%>"><div id="aprovarBotao"></div></a>

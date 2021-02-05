@@ -6,12 +6,14 @@ exports.createFileRegistry = async (req, res) => {
 
         let date = new Date;
         let id = req.session.usuario._id;
+
         const fileData = {
             file: req.file.filename,
             protocolo_entrada: `${date.getTime()}-${id}`,
             data_protocolo_entrada: date,
             criador: id,
-            local: req.file.path
+            local: req.file.path,
+            descricao: req.body.descricao
         }
 
         await fileService.createFile(fileData);
