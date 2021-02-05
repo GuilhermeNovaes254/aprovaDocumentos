@@ -18,9 +18,8 @@ body {
 }
 
 body {
-
     font-size: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--body-bg);
     color: white;
 }
@@ -36,9 +35,14 @@ a {
     justify-content: center;
 }
 
+label{
+    color: var(--body-bg);
+}
+
 input[type=text],
 input[type=password],
-input[type="file"]  {
+input[type="file"],
+input[type="email"]   {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -48,7 +52,9 @@ input[type="file"]  {
     box-sizing: border-box;
 }
 
-input[type=submit], button[type=submit] {
+input[type=submit], 
+button[type=submit] ,
+input[type="file"] {
     width: 100%;
     background-color: var(--button-color);
     color: white;
@@ -62,6 +68,10 @@ input[type=submit], button[type=submit] {
 
 button[type=submit] {
     width: 20%;
+}
+
+input[type="file"] {
+    width: auto;
 }
 
 input[type=submit]:hover,  button[type=submit]:hover{
@@ -101,11 +111,30 @@ input[type=submit]:hover,  button[type=submit]:hover{
 }
 
 #aprovarBotao, #negarBotao{
-    width: 20px;
-    height: 20px;
-    background-color: white;
+    width: 30px;
+    height: 30px;
+}
+
+#aprovarBotao{
+    background-color: blue;
+    background-image: url("../images/like.svg");
+    position: relative;
+    background-repeat: no-repeat;
 }
 
 #negarBotao{
-    background-color: blue;
+    background-color: red;
+    background-image: url("../images/like.svg");
+    transform: rotate(180deg);
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+#aproveField{
+    display: flex;
+    flex-direction: row;
+}
+
+.td{
+    height: 30px;
 }

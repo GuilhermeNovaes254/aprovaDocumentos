@@ -1,6 +1,6 @@
 
 const mongoose = require("mongoose");
-require('dotenv').config()
+require("dotenv").config()
 
 const uri = `mongodb://localhost:27017/${process.env.DB_MONGO_NAME}` //For local tests
 

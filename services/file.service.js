@@ -23,7 +23,7 @@ exports.getAllFiles = async (email) => {
 
 exports.filterOpenProtocolFiles = async () => {
     try {
-       const files = await File.find({ status: 0 }).populate('criador', ['_id', 'nome', 'sobrenome']);
+       const files = await File.find({ status: 0 }).populate("criador", ["_id", "nome", "sobrenome"]);
        return files;
     } catch (error) {
        throw new Error(error);

@@ -1,23 +1,23 @@
-<%- include('./partials/header') %>
+<%- include("./partials/header") %>
 
 <body>
 	<div class="container">
 		<%if( datas.length != 0){%>
 			<table border="1">
 				<tr>
-					<td>Incluído por</td>
-					<td>Data(Ano/Mês/Dia)</td>
-					<td>Visualizar</td>
-					<td>Ação</td>
+					<td class="field" >Incluído por</td>
+					<td class="field" >Data(Ano/Mês/Dia)</td>
+					<td class="field" >Visualizar</td>
+					<td class="field" >Ação</td>
 				</tr>
 				<%for(data of datas){%>
 					<tr>
-						<td><%=data.criador.nome%> <%=data.criador.sobrenome%></td>
-						<td><%=data.data_protocolo_entrada.toLocaleDateString()%></td>
-						<td><a href='<%=data.local%>' download='<%=data.file%>' target="_blank" >Abrir</a></td>
-						<td>
-							<a href='/aprovar/aprovar?id=<%=data._id%>'><div id='aprovarBotao'></div></a>
-							<a href='/aprovar/negar?id=<%=data._id%>'><div id='negarBotao'></div></a>
+						<td class="field" ><%=data.criador.nome%> <%=data.criador.sobrenome%></td>
+						<td class="field" ><%=data.data_protocolo_entrada.toLocaleDateString()%></td>
+						<td class="field" ><a href="<%=data.local%>" download="<%=data.file%>" target="_blank" >Abrir</a></td>
+						<td class="field" id ="aproveField">
+							<a href="/aprovar/aprovar?id=<%=data._id%>"><div id="aprovarBotao"></div></a>
+							<a href="/aprovar/negar?id=<%=data._id%>"><div id="negarBotao"></div></a>
 						</td>
 					</tr>
 				<%}%>
@@ -33,4 +33,4 @@
 
 </script>
 
-<%- include('./partials/footer') %>
+<%- include("./partials/footer") %>

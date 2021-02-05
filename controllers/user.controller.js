@@ -1,5 +1,5 @@
-const status = require('http-status-codes');
-const userService = require('../services/user.service');
+const status = require("http-status-codes");
+const userService = require("../services/user.service");
 
 exports.getAll = async (req, res) => {
 

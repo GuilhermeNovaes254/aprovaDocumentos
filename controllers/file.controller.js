@@ -1,4 +1,4 @@
-const fileService = require('../services/file.service');
+const fileService = require("../services/file.service");
 
 exports.createFileRegistry = async (req, res) => {
 
@@ -16,7 +16,8 @@ exports.createFileRegistry = async (req, res) => {
 
         await fileService.createFile(fileData);
 
-        res.redirect('/main/anexar?criado=true');
+
+        res.redirect(`/main/anexar?criado=true&protocolo=${fileData.protocolo_entrada}`);
 
     }
 
@@ -41,7 +42,7 @@ exports.aprove = async (req, res) => {
     };
 
     const aproved = await fileService.updateFile(id, newData);
-    res.redirect('/main/aprovar');
+    res.redirect("/main/aprovar");
 }
 
 exports.deny = async (req, res) => {
@@ -56,6 +57,6 @@ exports.deny = async (req, res) => {
     };
 
     const denied = await fileService.updateFile(id, newData);
-    res.redirect('/main/aprovar');
+    res.redirect("/main/aprovar");
 }
 

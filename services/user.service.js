@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const {User} = require("../models/user.model");
 const bcrypt = require("bcrypt");
-require('dotenv').config();
+require("dotenv").config();
 
 
 const genHash = async (info) => {
@@ -23,7 +23,7 @@ exports.createUser = async (data) => {
 
 exports.getAll = async (email) => {
     try {
-        const user = await User.find().select('-password -_id');
+        const user = await User.find().select("-password -_id");
         return user;
     } catch (error) {
         throw new Error(error);

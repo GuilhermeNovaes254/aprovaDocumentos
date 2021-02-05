@@ -1,15 +1,15 @@
-<%- include('./partials/header') %>
+<%- include("./partials/header") %>
 
 <body>
 	<div class="container">
-		Logged! *** <p id='path'></p> ***
+		Logged! *** <p id="path"></p> ***
 	</div>
 
 </body>
 
 <script>
    const pathnmame =  window.location.pathname;
-    document.getElementById('path').innerHTML = pathnmame
+    document.getElementById("path").innerHTML = pathnmame
 </script>
 
-<%- include('./partials/footer') %>
+<%- include("./partials/footer") %>

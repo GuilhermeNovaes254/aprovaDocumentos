@@ -2,20 +2,20 @@
 <html>
   <head>
     <title>Projeto Vanessa</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
   <header id="header">
-    <div class="element-header" id="anexar"><a href='/main/anexar'>Anexar</a></div>
+    <div class="element-header" id="anexar"><a href="/main/anexar">Anexar</a></div>
     <%if( (USUARIO.cargo == 1 || USUARIO.cargo == 2 )){%>
-      <div class="element-header" id="aprovar"><a href='/main/aprovar'>Aprovar</a></div>
+      <div class="element-header" id="aprovar"><a href="/main/aprovar">Aprovar</a></div>
     <%}%>
     <%if( (USUARIO.cargo == 2 )){%>
-      <div class="element-header"  id="gerirUsuarios"><a href='/main/gerir'>Usuários</a></div>
+      <div class="element-header"  id="gerirUsuarios"><a href="/main/gerir">Usuários</a></div>
     <%}%>
-    <div class="element-header" id="atualizarUsuario"><a href='/main/updateuser'>Atualizar Usuário</a></div>
+    <div class="element-header" id="atualizarUsuario"><a href="/main/updateuser">Atualizar Usuário</a></div>
     <%if( (USUARIO.cargo == 2 )){%>
-      <div class="element-header"  id="relatorios"><a href='/main/relatorios'>Relatórios</a></div>
+      <div class="element-header"  id="relatorios"><a href="/main/relatorios">Relatórios</a></div>
     <%}%>
   </header>
   <body>
