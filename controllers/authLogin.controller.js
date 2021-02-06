@@ -1,25 +1,20 @@
 const bcrypt = require("bcrypt");
-const userService = require("../services/user.service");
+const userController = require("../controllers/user.controller");
 
-const authLogin = {
+const authLogin =  async (req, res) => {
 
-    loginSession: async (req, res) => {
+    const {password, email} = req.body;
+    
+    const user = await userController.findByEmail(email)
 
-        const {password, email} = req.body;
-        
-        const user = await userService.getOne(email)
-        console.log(user)
-        // console.log(user)
-
-        // validar senha passada via post contra a guardada
-        if (!bcrypt.compareSync(password, user.password)) {
-            res.redirect("/");
-        }
-
-        // setar uma session com o usuario
-        req.session.usuario = user;
-        res.redirect("/main")
+    // validar senha passada via post contra a guardada
+    if (!bcrypt.compareSync(password, user.password)) {
+        res.redirect("/");
     }
+
+    // setar uma session com o usuario
+    req.session.usuario = user;
+    res.redirect("/main")    
 
 };
 

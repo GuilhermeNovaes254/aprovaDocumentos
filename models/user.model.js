@@ -14,7 +14,8 @@ const userSchema = new mongoose.Schema({
     cargo: {
         type: Number, // 0 usuario, 1 aprovador, 2 adm
         required: true,
-        unique: false
+        unique: false, 
+        default: 0
     },
     email: {
         type: String,

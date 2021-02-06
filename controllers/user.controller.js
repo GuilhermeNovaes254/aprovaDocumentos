@@ -10,12 +10,12 @@ exports.getAll = async (req, res) => {
 
 exports.create = async (req, res) => {
     console.log(req.body);
-    const newUsers = await userService.createUser(req.body);
-    return create;
-};
+    const newUser = await userService.createUser(req.body);
+    res.redirect("/?usercreated=1");
+}
 
-exports.findOne = async (id) => {
-
-    let user = await userService.getOne(id);
+exports.findByEmail = async (email) => {
+    let user = await userService.getOne(email);
+    console.log(user)
     return user;
 }

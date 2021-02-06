@@ -9,15 +9,13 @@
 		<div class="container">
 			<form action="/criar" method="POST" class="login">
                 <label for="nome">Nome</label>
-                <input required type="text" name="nome"/> 
+                <input required type="text" name="nome" minlength="2"/> 
                 <label for="sobrenome">Sobrenome</label>
-                <input required type="text" name="sobrenome"/>
+                <input required type="text" name="sobrenome" minlength="2"/>
                 <label for="email">E-mail</label>
                 <input required type="email" name="email"/>
-                <label for="senha">Senha</label>
-                <input required type="text" name="senha"/>
-                <label for="confirmSenha">Confirmar Senha</label>
-                <input required type="text" name="confirmSenha"/>
+                <label for="password">Senha</label>
+                <input required type="password" name="password" minlength="6"/>
                 <input type="submit" value="Enviar">
 			</form>
 
