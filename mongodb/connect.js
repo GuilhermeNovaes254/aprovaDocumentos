@@ -2,8 +2,8 @@
 const mongoose = require("mongoose");
 require("dotenv").config()
 
-const uri = `mongodb://localhost:27017/${process.env.DB_MONGO_NAME}` //For local tests
-// const uri = `mongodb+srv://${process.env.DB_MONGO_CLUSTER}:${process.env.DB_MONGO_PASSWORD}@cluster0.kxcxw.mongodb.net/${process.env.DB_MONGO_NAME}` 
+// const uri = `mongodb://localhost:27017/${process.env.DB_MONGO_NAME}` //For local tests
+const uri = `mongodb+srv://${process.env.DB_MONGO_CLUSTER}:${process.env.DB_MONGO_PASSWORD}@cluster0.kxcxw.mongodb.net/${process.env.DB_MONGO_NAME}` 
 
 module.exports = () => {
    // DB Connection

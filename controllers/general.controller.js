@@ -59,3 +59,9 @@ exports.relatorios = async (req, res) => {
 
     res.render("relatorios")
 };
+
+exports.sair = async (req, res) => {
+
+    req.session.destroy();
+    res.render('index');
+};

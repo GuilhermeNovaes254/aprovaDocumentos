@@ -54,6 +54,7 @@ router.get("/main/aprovar", verifLogged, generalController.aprovar);
 router.get("/main/gerir", verifLogged, generalController.gerir);
 router.get("/main/updateuser", verifLogged, generalController.updateuser);
 router.get("/main/relatorios", verifLogged, generalController.relatorios);
+router.get("/main/out", generalController.sair);
 
 router.post("/users/create", usersController.create);
 router.post("/users/update", usersController.update);
