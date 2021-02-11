@@ -36,19 +36,19 @@ exports.getOne = async (email) => {
     }
 };
 
-exports.updateUser = async (email, update) => {
+exports.updateUser = async (update, id) => {
     try {
         const options = {
             new: true
         };
-        if (update.email != undefined) {
-            update.password = await genHash(update.password)
+
+        let salt = parseInt(process.env.SALT_ROUNDS, 10);
+
+        let newData = {
+            password: bcrypt.hashSync(update, salt)
         }
-        const user = await User.findOne({
-            email: email
-        });
-        const newUser = await User.findByIdAndUpdate(user._id, update, options);
-        console.log(newUser)
+        
+        const newUser = await User.findByIdAndUpdate(id, newData, options);
 
     } catch (error) {
         throw new Error(error);

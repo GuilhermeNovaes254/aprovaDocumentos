@@ -34,7 +34,7 @@ exports.updateFile = async (id, update) => {
    try{
       const options = { new: true };
       const newFile = await File.findByIdAndUpdate(id, update, options);
-      console.log(newFile)
+      // console.log(newFile)
 
    }catch(error) {
       throw new Error(error);

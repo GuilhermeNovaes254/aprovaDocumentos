@@ -13,8 +13,8 @@ exports.login = async (req, res) => {
         email,
         password
     } = req.body;
-    console.log(password);
-    console.log(email);
+    // console.log(password);
+    // console.log(email);
     res.send("OK");
 
 };

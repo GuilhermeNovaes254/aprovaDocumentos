@@ -2,16 +2,39 @@
 
 <body>
 	<div class="container">
-		<form action="/login" method="POST" class="update">
-			<label >Nome</label>
-			<input type="text" name="nome" for="nome" placeholder="Nome" class="form-element">
-			<label >Sobrenome</label>
-			<input type="text" name="sobrenome" placeholder="Sobrenome">
+		<form action="/users/update" method="POST" class="update">
 			<label >Senha</label>
-			<input type="text" name="password" placeholder="Senha">			
+			<input type="text" name="password" placeholder="Senha" minlength="6">		
+			<label >Confirmar Senha</label>
+			<input type="text" name="passwordConfirm" placeholder="Confirmar Senha" minlength="6">			
 			<input type="submit" value="Atualizar dados">
 		</form>
+		<article class="created" id="created"></article>
 	</div>
+
+	<script>
+		let query = (window.location.href).split("?");
+		let itens = '';
+
+		if(query[1] != undefined){
+			itens = query[1].split("=");
+		}
+
+		let itensID = document.getElementById('created')
+		console.log(itens[1]);
+		if(itens[1] == '1') {
+			itensID.innerHTML = 'Senha Atualizada!'
+			itensID.style.display = 'inline';
+			itensID.style.backgroundColor = '#4CAF50';
+		}else if(itens[1] == '0'){
+			itensID.innerHTML = 'Senhas não combinam!'
+			itensID.style.display = 'inline';
+			itensID.style.backgroundColor = 'red';
+		}else{
+			itensID.style.display = 'none';
+		}
+
+	</script>
 </body>
 
 <%- include("./partials/footer") %>

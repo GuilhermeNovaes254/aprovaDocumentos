@@ -56,6 +56,7 @@ router.get("/main/updateuser", verifLogged, generalController.updateuser);
 router.get("/main/relatorios", verifLogged, generalController.relatorios);
 
 router.post("/users/create", usersController.create);
+router.post("/users/update", usersController.update);
 router.get("/users", usersController.getAll);
 
 router.post("/anexar/arquivo", multer(multerConfig).single("arquivo"), fileController.createFileRegistry);
