@@ -9,7 +9,7 @@ const authLogin =  async (req, res) => {
 
     // validar senha passada via post contra a guardada
     if (!bcrypt.compareSync(password, user.password)) {
-        res.redirect("/");
+        res.redirect('/?usercreated=3');
     }
 
     // setar uma session com o usuario

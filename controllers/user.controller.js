@@ -16,7 +16,7 @@ exports.create = async (req, res) => {
 
 exports.findByEmail = async (email) => {
     let user = await userService.getOne(email);
-    console.log(user)
+    // console.log(user)
     return user;
 }
 

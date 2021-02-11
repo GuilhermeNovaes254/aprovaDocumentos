@@ -14,7 +14,7 @@
 				<input required type="password" name="password" for="password" value="Cietec2242" placeholder="Senha">
 				<input type="submit" value="Enviar">
 			</form>
-			<article class="created" id="created">Usuário Criado!</article>
+			<article class="created" id="created"></article>
 			<div><a href="/criar">Criar usuário</a></div>
 		</div>
 
@@ -29,8 +29,14 @@
 			let itensID = document.getElementById('created')
 			console.log(itens[1]);
 			if(itens[1] == '1') {
+				itensID.innerHTML = 'Usuário Criado!';
 				itensID.style.display = 'inline';
 				itensID.style.backgroundColor = '#4CAF50';
+			}else if(itens[1] == '3'){
+				itensID.innerHTML = 'Senha Incorreta';
+				itensID.style.display = 'inline';
+				itensID.style.backgroundColor = 'red';
+				
 			}else{
 				itensID.style.display = 'none';
 			}
