@@ -16,7 +16,7 @@
 						<td class="field" ><%=data.criador.nome%> <%=data.criador.sobrenome%></td>
 						<td class="field" ><%=data.data_protocolo_entrada.toLocaleDateString()%></td>
 						<td class="field" ><%=data.descricao%></td>
-						<td class="field" ><a href="<%=data.local%>" download="<%=data.file%>" target="_blank" >Abrir</a></td>
+						<td class="field" ><a href="/uploads/<%=data.file%>" download="<%=data.file%>" target="_blank" >Abrir</a></td>
 						<td class="field" id ="aproveField">
 							<a href="/aprovar/aprovar?id=<%=data._id%>"><div id="aprovarBotao"></div></a>
 							<a href="/aprovar/negar?id=<%=data._id%>"><div id="negarBotao"></div></a>

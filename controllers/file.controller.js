@@ -2,17 +2,16 @@ const fileService = require("../services/file.service");
 
 exports.createFileRegistry = async (req, res) => {
 
-    if (req.file != undefined) {
+    if (req.files[0] != undefined) {
 
         let date = new Date;
         let id = req.session.usuario._id;
-
         const fileData = {
-            file: req.file.filename,
+            file: req.files[0].filename,
             protocolo_entrada: `${date.getTime()}-${id}`,
             data_protocolo_entrada: date,
             criador: id,
-            local: req.file.path,
+            local: req.files[0].path,
             descricao: req.body.descricao
         }
 
